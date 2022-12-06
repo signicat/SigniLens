@@ -35,6 +35,8 @@ jobs:
           node update.js
       - name: Build Lens
         run: |
+          unset CSC_LINK
+          unset CSC_KEY_PASSWORD
           mkdir releasefiles
           if [ "$RUNNER_OS" == "Windows" ]; then
             choco install visualstudio2019buildtools visualstudio2019-workload-vctools
